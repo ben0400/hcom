@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+ <div class="container-fluid">
+
+	<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Price</th>
+      <th scope="col">Total Price</th>
+      <td>Quantity</td>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      
+    </tr>
+  </thead>
+<h1>Items: {{order.TotalI}}</h1>
+  <tbody>
+
+{% for item in items %}
+    <tr>
+
+      <th scope="row">{{item.product.name}}</th>
+      <td>{{item.product.price |floatformat:2}}</td>
+      <td>{{item.Total |floatformat:2}}</td>
+      <td>{{item.quantity}}</td>
+      
+      <td><button data-product='{{item.product.id}}' data-action="add" class="btn btn-dark update-cart" >&#x2191;</button></td>
+      
+      <td><button data-product='{{item.product.id}}' data-action="down" class="btn btn-dark update-cart" >&#x2193;</button></td>
+      
+      <td> <button  data-product='{{item.product.id}}' data-action="remove" class="btn btn-dark update-cart">&#x58;</button></td>
+ 
+    </tr>
+   {% endfor %} 
+  </tbody>
+ 
+</table>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<center>
+	<a href="{% url 'store' %}"><button class="btn btn-dark">Back To shoping</button></a>
+	<a href='{% url "checkout" %}'><button class="btn btn-dark">checkout</button></a>
+	
+</center>
+{% endblock content %}

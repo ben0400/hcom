@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">Adress</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" />
+</div>
+<br>
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">City</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" />
+</div>
+<br>
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">State</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" />
+</div>
+<br>
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">Zipcode</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" />
+</div>
+<br>
+<br>
+<br>
+
+<label>
+  {% for i in items %}
+  <h4>Product: {{i.product.name}}</h4>
+  <h4>Price: {{i.product.price}} </h4>
+  <hr>
+
+  <br>
+  {% endfor %}
+  
+</label>
+
+<br>
+<br>
+<br>
+
+
+  <center>
+      <h1>Total : {{order.TotalAll}}</h1>
+<a href=''><button class="btn btn-dark"> Contuner checkout</button></a>
+</center>
+
+{% endblock content %}
